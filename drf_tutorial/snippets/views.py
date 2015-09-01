@@ -14,6 +14,7 @@ class JSONResponse(HttpResponse):
         super(JSONResponse, self).__init__(content, **kwargs)
 
 
+# Lists all Snippets
 @csrf_exempt
 def snippet_list(request):
     if request.method == 'GET':
@@ -30,6 +31,7 @@ def snippet_list(request):
         return JSONResponse(serializer.errors, status=400)
 
 
+# Lists one Snippet based on primary key
 @csrf_exempt
 def snippet_detail(request, pk):
     try:
