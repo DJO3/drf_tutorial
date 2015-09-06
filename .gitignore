@@ -50,6 +50,8 @@ coverage.xml
 # Django stuff:
 *.log
 db.sqlite3
+*.idea
+snippets/migrations/*
 
 # Sphinx documentation
 docs/_build/
