@@ -1,4 +1,5 @@
 from django.contrib.auth.models import User
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
 from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from snippets.models import Snippet
 from snippets.serializers import SnippetSerializer, UserSerializer
