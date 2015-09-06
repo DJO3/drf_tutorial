@@ -1,6 +1,7 @@
-from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
+from django.contrib.auth.models import User
+from rest_framework.generics import ListAPIView, RetrieveAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
+from snippets.serializers import SnippetSerializer, UserSerializer
 
 
 # Lists all Snippets
@@ -15,4 +16,13 @@ class SnippetDetail(RetrieveUpdateDestroyAPIView):
     serializer_class = SnippetSerializer
 
 
+# Lists all Users, read only
+class UserList(ListAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
+
+# List one User based on primary key, read only
+class UserDetail(RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
