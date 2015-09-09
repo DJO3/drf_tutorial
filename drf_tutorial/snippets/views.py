@@ -19,7 +19,7 @@ def api_root(request, format=None):
 
 
 # Return highlighted snippet
-class SnippetHighlighter(generics.GenericAPIView):
+class SnippetHighlight(generics.GenericAPIView):
     queryset = Snippet.objects.all()
     serializer_class = renderers.StaticHTMLRenderer
 
